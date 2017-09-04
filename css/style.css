@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #96b9f2;
+}
+
+#board div {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    float: left;
+}
+
+#board div.live {
+    background-color: #000000;
+}
+
+#board {
+    margin: 50px auto 0;
+    min-height: 100px;
+    min-width: 100px
+}
+
+#game-menu {
+    margin: 50px auto;
+    width: auto;
+}
+
+.game-set {
+  display: flex;
+  justify-content: center;
+
+}
+.button {
+  width: 100px;
+  height: 25px;
+  border: none;
+  border-radius: 5px;
+  background: #0f2a56;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 20px 10px;
+}
