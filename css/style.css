@@ -3,9 +3,18 @@
 }
 
 body {
+    min-height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: #96b9f2;
+    font-size: 16px;
+    background: rgba(226,226,226,1);
+    background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 0%, rgba(219,219,219,1) 29%, rgba(147,201,100,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(0%, rgba(209,209,209,1)), color-stop(29%, rgba(219,219,219,1)), color-stop(100%, rgba(147,201,100,1)));
+    background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 0%, rgba(219,219,219,1) 29%, rgba(147,201,100,1) 100%);
+    background: -o-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 0%, rgba(219,219,219,1) 29%, rgba(147,201,100,1) 100%);
+    background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 0%, rgba(219,219,219,1) 29%, rgba(147,201,100,1) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #board div {
@@ -21,13 +30,13 @@ body {
 }
 
 #board {
-    margin: 20px auto 0;
+    margin: 1.5rem auto;
     min-height: 100px;
     min-width: 100px
 }
 
 #game-menu {
-    margin: 50px auto;
+    margin: 3rem auto;
     width: auto;
 }
 
@@ -37,11 +46,12 @@ body {
 
 }
 .button {
-  width: 100px;
-  height: 25px;
+  width: 15%;
+  height: 2rem;
+  font-size: 1em;
   border: none;
   border-radius: 5px;
-  background: #0f2a56;
+  background: #043008;
   color: #fff;
   text-transform: uppercase;
   margin: 20px 10px;
@@ -50,6 +60,8 @@ body {
 label, input {
   display: block;
   margin: 10px auto;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 label {
