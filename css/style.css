@@ -21,7 +21,7 @@ body {
 }
 
 #board {
-    margin: 50px auto 0;
+    margin: 20px auto 0;
     min-height: 100px;
     min-width: 100px
 }
@@ -45,4 +45,18 @@ body {
   color: #fff;
   text-transform: uppercase;
   margin: 20px 10px;
+}
+
+label, input {
+  display: block;
+  margin: 10px auto;
+}
+
+label {
+  text-align: center;
+}
+
+#button-start {
+  display: block;
+  margin: 10px auto;
 }

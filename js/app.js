@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
         this.cells.push(div);
       }
       for (i = 0; i < this.cells.length; i++) {
-        this.cells[i].addEventListener('mouseenter', toggleLive);
+        this.cells[i].addEventListener('click', toggleLive);
       }
 
       function toggleLive(e) {
@@ -119,31 +119,32 @@ document.addEventListener("DOMContentLoaded", function(e) {
     };
 
   }
-  var interval;
-  var playButton = document.querySelector('#play');
-  playButton.addEventListener('click', function(e) {
-    if (!game.isRunning) {
-      interval = setInterval(function() {
-        game.printNextGeneration(game.computeNextGeneration());
-      }, 150);
-      game.isRunning = true;
-    }
-  });
 
-  var pauseButton = document.querySelector('#pause');
-  pauseButton.addEventListener('click', function(e) {
-    clearInterval(interval);
-    game.isRunning = false;
-  });
+  var buttonStart = document.querySelector('#button-start');
 
-  function getBoard() {
-    width = prompt('Please enter board width (number of cells)');
-    height = prompt('Please enter board height (number of cells)');
+  buttonStart.addEventListener('click', getBoard);
+
+  function getBoard(event) {
+    event.preventDefault();
+    var width = document.querySelector('.width').value;
+    var height = document.querySelector('.height').value;
+    var game = new GameofLife(width, height);
+    var interval;
+    var playButton = document.querySelector('#play');
+    playButton.addEventListener('click', function(e) {
+      if (!game.isRunning) {
+        interval = setInterval(function() {
+          game.printNextGeneration(game.computeNextGeneration());
+        }, 150);
+        game.isRunning = true;
+      }
+    });
+    var pauseButton = document.querySelector('#pause');
+    pauseButton.addEventListener('click', function(e) {
+      clearInterval(interval);
+      game.isRunning = false;
+    });
+    game.createBoard();
+    game.firstGlider();
   }
-  getBoard();
-  var game = new GameofLife(width, height);
-  game.createBoard();
-  game.firstGlider();
-
-
 });
