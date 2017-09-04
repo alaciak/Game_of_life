@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
       board.style.width = boardWidth * 10 + 'px';
       board.style.height = boardHeight * 10 + 'px';
       var fieldsNumber = boardWidth * boardHeight;
-      for (var i = 0; i < fieldsNumber; i++) {
+      for (i = 0; i < fieldsNumber; i++) {
         var div = document.createElement('div');
         this.board.appendChild(div);
         this.cells.push(div);
@@ -118,17 +118,27 @@ document.addEventListener("DOMContentLoaded", function(e) {
       }
     };
 
+    this.clearBoard = function() {
+      for(var i = 0; i < this.cells.length; i++) {
+        this.board.removeChild(this.cells[i]);
+      }
+    };
   }
 
   var buttonStart = document.querySelector('#button-start');
 
   buttonStart.addEventListener('click', getBoard);
 
+  var game;
+
   function getBoard(event) {
     event.preventDefault();
+    if(game) {
+      game.clearBoard();
+    }
     var width = document.querySelector('.width').value;
     var height = document.querySelector('.height').value;
-    var game = new GameofLife(width, height);
+    game = new GameofLife(width, height);
     var interval;
     var playButton = document.querySelector('#play');
     playButton.addEventListener('click', function(e) {
